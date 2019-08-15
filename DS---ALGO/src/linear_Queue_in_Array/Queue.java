@@ -1,4 +1,4 @@
-package Queue_in_Array;
+package linear_Queue_in_Array;
 
 public class Queue {
 	int ar[];
