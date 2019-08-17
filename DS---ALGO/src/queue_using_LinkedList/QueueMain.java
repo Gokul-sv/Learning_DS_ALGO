@@ -8,15 +8,13 @@ public class QueueMain {
 		q.enQueue(10);
 		q.enQueue(20);
 		q.enQueue(30);
-		//q.enQueue(40);
+		q.enQueue(40);
 		q.display();
-		q.deQueue();
-		q.deQueue();
 		q.display();
+		q.peek();
+		q.deleteQueue();
 		System.out.println(q.size);
-		System.out.println(q.first.data);
-		System.out.println(q.last.data);
-
+		System.out.println(q.isEmpty());
+		System.out.println(q.last);
 	}
-
 }

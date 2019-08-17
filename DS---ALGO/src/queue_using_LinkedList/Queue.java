@@ -58,5 +58,28 @@ public class Queue {
 			System.out.println();
 		}
 	}
+	
+	void peek()
+	{
+		if(size==0)
+		{
+			System.out.println("Queue is Empty");
+		}
+		else
+		{
+			System.out.println(first.data);
+		}
+	}
+	
+	boolean isEmpty()
+	{
+		return size==0;
+	}
+	
+	void deleteQueue() 
+	{
+		first=last=null;
+		size=0;
+	}
 
 }
