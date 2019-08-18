@@ -206,7 +206,7 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
-	//Delete the data from the given index
+	//Delete the data from the given index---------------------------------------------------
 	void delete(int index)
 	{
 		if(index > size-1 || index < 0)
@@ -236,7 +236,7 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
-	//set the given value to the given index
+	//set the given value to the given index---------------------------------------------
 	void set(int index,int value)
 	{
 		if(index > size-1 || index < 0)
