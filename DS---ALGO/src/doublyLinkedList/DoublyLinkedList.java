@@ -62,7 +62,7 @@ public class DoublyLinkedList {
 				n.data=data;
 				n.next=temp.next;
 				n.prev=temp;
-				if(index==size-1)// this logic included for if we need to add end of the list(last)
+				if(index==size-1)// this logic included for if we need to  add at end of the list(last)
 				{					
 					last=n;
 				}
@@ -70,7 +70,6 @@ public class DoublyLinkedList {
 				{
 					temp.next.prev=n;
 				}
-
 				temp.next=n;
 				size++;
 				return;
