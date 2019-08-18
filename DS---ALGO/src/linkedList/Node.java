@@ -1,7 +1,8 @@
 package linkedList;
 
-public class Node {
+//creating the node
+public class Node 
+{
 	int data;
 	Node next;
-
 }

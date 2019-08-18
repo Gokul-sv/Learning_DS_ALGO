@@ -14,6 +14,6 @@ public class SinglyLinkedListMain {
 		sl.size();
 		sl.display();
 		sl.display();
-		System.out.println(sl.last.next.next.next.next.next.next.next.next.next);
+		System.out.println(sl.first.next);
 	}
 }

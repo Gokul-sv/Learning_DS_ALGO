@@ -7,12 +7,12 @@ public class SinglyLinkedList
 	Node first=null;
 	Node last=null;
 	int size=0;
-	
+	//Adding the data to list (adding at the front or head)--------------------
 	void add(int data) 
 	{
 		Node n = new Node();
 		n.data = data;
-		n.next = first;
+		n.next = first;  
 		first=n;
 		if(last==null)
 		{
@@ -20,11 +20,34 @@ public class SinglyLinkedList
 		}
 		size++;
 	}
-	
+	// here we are using the above add method becz the logic of add method is adding front
+	void addFirst(int data)
+	{
+		add(data);
+	}
+	//Adding the data to list at the last or tail)--------------------------------------
+	void addLast(int data)
+	{
+		Node n = new Node();
+		n.data = data;
+		n.next = null;
+		if(last!=null)
+		{ 
+			last.next=n;
+		}
+		if(first==null)
+		{
+			first=n;
+		}	
+		last=n;
+		size++;
+	}
+	//Adding the data into right next to the give index---------------------------------------
 	void addAfter(int index,int value)
 	{
 		if(index > size-1 || index < 0)
 		{
+			System.out.println("Invalid index");
 			return;
 		}		
 		int indx = 0;
@@ -48,11 +71,12 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
-	
+	//Adding the data into left to the give index---------------------------------------
 	void addBefore(int index,int data) 
 	{
 		if(index < 0 || index > size-1)
 		{
+			System.out.println("Invalid index");
 			return;
 		}
 		if(index==0)
@@ -76,29 +100,7 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
-	
-	void addFirst(int data)
-	{
-		add(data);
-	}
-
-	void addLast(int data)
-	{
-		Node n = new Node();
-		n.data = data;
-		n.next = null;
-		if(last!=null)
-		{ 
-			last.next=n;
-		}
-		if(first== null)
-		{
-			first=n;
-		}
-			
-		last=n;
-		size++;
-	}
+	//Printing the data's in the list-----------------------------------------------------
 	void display()
 	{
 		if(first!=null)
@@ -116,12 +118,12 @@ public class SinglyLinkedList
 			System.out.println("list is Empty----");
 		}
 	}
-	
+	//Print the size of list--------------------------------------------------------------
 	void size()
 	{
 		System.out.println(size);
 	}
-	
+	//Get the Index of given data------------------------------------------------------
 	int indexOf(int data)
 	{
 		int index=-1;
@@ -140,7 +142,7 @@ public class SinglyLinkedList
 		}
 		return -1;
 	}
-	
+	//Get the data of given index--------------------------------------------------
 	int get(int index)
 	{
 		if(index > size-1)
@@ -160,6 +162,7 @@ public class SinglyLinkedList
 		}
 		return -1;
 	}
+	//Delete from front of the List----------------------------------------------------------
 	void deleteFront()
 	{
 		if(size==0)
@@ -176,6 +179,7 @@ public class SinglyLinkedList
 		first=first.next;
 		size--;
 	}
+	//Delete from last of the List----------------------------------------------------------------
 	void deleteLast()
 	{
 		if(size==0)
@@ -202,6 +206,7 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
+	//Delete the data from the given index
 	void delete(int index)
 	{
 		if(index > size-1 || index < 0)
@@ -231,6 +236,7 @@ public class SinglyLinkedList
 			temp=temp.next;
 		}
 	}
+	//set the given value to the given index
 	void set(int index,int value)
 	{
 		if(index > size-1 || index < 0)
