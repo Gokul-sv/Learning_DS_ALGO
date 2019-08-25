@@ -247,4 +247,10 @@ public class BinaryTree {
 			}
 		}
 	}
+	
+	void deleteBinaryTree()
+	{
+		root=null;
+		System.out.println("Tree has been deleted sucessfully");
+	}
 }
