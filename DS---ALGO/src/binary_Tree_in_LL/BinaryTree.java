@@ -21,7 +21,7 @@ public class BinaryTree {
 		{
 			Queue<Node> q = new LinkedList();
 			q.add(root);
-			while(q.size()!=0)
+			while(!q.isEmpty())
 			{
 				Node temp=q.remove();
 				if(temp.left==null)
@@ -57,7 +57,7 @@ public class BinaryTree {
 		}
 		Queue<Node> q = new LinkedList();
 		q.add(root);
-		while(q.size()!=0)
+		while(!q.isEmpty())
 		{
 			Node temp=q.remove();
 			System.out.print(temp.data+" ");
@@ -190,8 +190,8 @@ public class BinaryTree {
 				Node temp=q.remove();
 				if(temp.data==value)
 				{
-					temp.data=deepestNode();
-					deleteDeepestNode();
+					temp.data=deepestNode();//****
+					deleteDeepestNode();//****
 					return;
 				}
 				else
@@ -220,11 +220,11 @@ public class BinaryTree {
 		{
 			Queue<Node> q= new LinkedList();
 			q.add(root);
-			Node prev=null;
+			Node prev=null;//*****
 			Node temp=null;
 			while(!q.isEmpty())
 			{
-				prev=temp;
+				prev=temp;//****
 				temp=q.remove();
 				if(temp.left==null)
 				{
