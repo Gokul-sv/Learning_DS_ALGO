@@ -2,7 +2,7 @@ package binary_Tree_in_Array;
 
 public class BinaryTree {
 	int ar[];
-	int lastupdateindex=0;
+	int lastupdateindex=0;//In Binary tree iterative method we are leaving first (0th) index as empty to help insertion [O(1)]
 	int size=0;
 	BinaryTree(int length)
 	{
@@ -24,7 +24,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void preOrder(int index)
+	void preOrder(int index)//rLR
 	{
 		if(size==0)
 		{
@@ -46,7 +46,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void inOrder(int index)
+	void inOrder(int index)// LrR
 	{
 		if(size==0)
 		{
@@ -68,7 +68,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void postOrder(int index)
+	void postOrder(int index)// LRr
 	{
 		if(size==0)
 		{
