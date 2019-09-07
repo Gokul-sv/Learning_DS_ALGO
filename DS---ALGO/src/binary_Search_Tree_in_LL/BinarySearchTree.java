@@ -142,14 +142,17 @@ public class BinarySearchTree {
 			if(nroot.left==null && nroot.right==null)
 			{
 				nroot=null;
+				size--;
 			}
 			else if(nroot.left!=null && nroot.right==null)
 			{
 				nroot=nroot.left;
+				size--;
 			}
 			else if(nroot.right!=null && nroot.left==null)
 			{
 				nroot=nroot.right;
+				size--;
 			}
 			else if(nroot.left!=null && nroot.right!=null)
 			{
@@ -168,5 +171,9 @@ public class BinarySearchTree {
 		}
 		return curroot;
 	}
-	
+	void delete_BST()
+	{
+		root=null;
+		size=0;
+	}
 }
