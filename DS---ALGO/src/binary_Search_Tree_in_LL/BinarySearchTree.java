@@ -19,7 +19,7 @@ public class BinarySearchTree {
 		}
 		else
 		{
-			bst_insert(root,data);
+			root=bst_insert(root,data);
 		}
 	}
 	Node bst_insert(Node curNode,int data)
