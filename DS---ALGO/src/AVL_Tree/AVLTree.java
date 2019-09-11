@@ -41,27 +41,27 @@ public class AVLTree {
 			curnode.right=insert_avl(curnode.right,data);
 		}
 		int balance=height(curnode.left)-height(curnode.right);
-		if(balance>1)
+ 		if(balance>=2)
 		{
 			if(height(curnode.left.left)>=height(curnode.left.right))
 			{
-				curnode=rightRotation(curnode);
+				curnode=rightRotation(curnode);//LL
 			}
 			else
 			{
-				curnode=leftRotation(curnode);
+				curnode.left=leftRotation(curnode.left);//LR
 				curnode=rightRotation(curnode);
 			}
 		}
-		else if(balance<-1)
+		else if(balance<=-2)
 		{
 			if(height(curnode.left.left)>=height(curnode.left.right))
 			{
-				curnode=leftRotation(curnode);
+				curnode=leftRotation(curnode);//RR
 			}
 			else
 			{
-				curnode=rightRotation(curnode);
+				curnode.right=rightRotation(curnode.right);//RL
 				curnode=leftRotation(curnode);
 			}
 		}
@@ -71,14 +71,14 @@ public class AVLTree {
 	Node rightRotation(Node curnode)
 	{
 		Node newRoot=curnode.left;
-		curnode.left=newRoot.right;
+		curnode.left=curnode.left.right;
 		newRoot.right=curnode;
 		return newRoot;
 	}
 	Node leftRotation(Node curnode)
 	{
 		Node newRoot = curnode.right;
-		curnode.right=newRoot.left;
+		curnode.right=curnode.right.left;
 		newRoot.left=curnode;
 		return newRoot;
 	}
