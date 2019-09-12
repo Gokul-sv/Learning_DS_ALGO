@@ -156,7 +156,7 @@ public class BinarySearchTree {
 			}
 			else if(nroot.left!=null && nroot.right!=null)
 			{
-				Node temp=min_of_rit_subTree(nroot);//***
+				Node temp=min_of_rit_subTree(nroot.right);//***
 				nroot=delete(nroot,temp.data);//******
 				nroot.data=temp.data;//***
 			}

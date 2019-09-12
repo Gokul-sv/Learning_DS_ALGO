@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
+
+
 public class AVLTree {
 	Node root;
 	int size;
@@ -124,5 +126,100 @@ public class AVLTree {
 			}
 		}
 		System.out.println();
+	}
+	
+	void delete(int data)
+	{
+		if(root==null)
+		{
+			System.out.println("Can't delete tree is empty");
+		}
+		else
+		{
+			root=delete(root,data);
+		}
+	}
+	
+	Node delete(Node nroot,int data)
+	{
+		if(nroot==null)
+		{
+			return null;
+		}
+		if(data<nroot.data)
+		{
+			nroot.left=delete(nroot.left,data);
+		}
+		else if(data>nroot.data)
+		{
+			nroot.right=delete(nroot.right,data);
+		}
+		else if(nroot.data==data)
+		{
+			if(nroot.left==null && nroot.right==null)
+			{
+				nroot=null;
+				size--;
+			}
+			else if(nroot.left!=null && nroot.right==null)
+			{
+				nroot=nroot.left;
+				size--;
+			}
+			else if(nroot.right!=null && nroot.left==null)
+			{
+				nroot=nroot.right;
+				size--;
+			}
+			else if(nroot.left!=null && nroot.right!=null)
+			{
+				Node temp=min_of_rit_subTree(nroot.right);//***
+				nroot=delete(nroot,temp.data);//******
+				nroot.data=temp.data;//***
+			}
+		}
+		if(nroot!=null)
+		{
+			int balance=height(nroot.left)-height(nroot.right);
+	 		if(balance>=2)
+			{
+				if(height(nroot.left.left)>=height(nroot.left.right))
+				{
+					nroot=rightRotation(nroot);//LL
+				}
+				else
+				{
+					nroot.left=leftRotation(nroot.left);//LR
+					nroot=rightRotation(nroot);
+				}
+			}
+			else if(balance<=-2)
+			{
+				if(height(nroot.left.left)>=height(nroot.left.right))
+				{
+					nroot=leftRotation(nroot);//RR
+				}
+				else
+				{
+					nroot.right=rightRotation(nroot.right);//RL
+					nroot=leftRotation(nroot);
+				}
+			}
+		}
+			return nroot;
+	}
+	
+	Node min_of_rit_subTree(Node curroot)
+	{
+		if(curroot.left!=null)
+		{
+			curroot=min_of_rit_subTree(curroot.left);
+		}
+		return curroot;
+	}
+	void delete_AVL()
+	{
+		root=null;
+		size=0;
 	}
 }
