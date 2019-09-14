@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
-	
 	Node root;
 	int size;
 	
@@ -19,7 +18,7 @@ public class BinaryTree {
 		}
 		else
 		{
-			Queue<Node> q = new LinkedList();
+			Queue<Node> q = new LinkedList();//*
 			q.add(root);
 			while(!q.isEmpty())
 			{
@@ -128,7 +127,7 @@ public class BinaryTree {
 				Node temp=q.remove();
 				if(temp.data==value)
 				{
-					System.out.println("Find the value "+value+" in the Tree");
+					System.out.println(value+" Found in the Tree");
 					return;
 				}
 				if(temp.left!=null)
@@ -144,7 +143,7 @@ public class BinaryTree {
 		}
 	}
 
-	int deepestNode()
+	int deepestNode() // it will return last node of the tree
 	{
 		int res=-1;
 		if(root==null)
@@ -156,7 +155,7 @@ public class BinaryTree {
 		{
 			Queue<Node> q = new LinkedList();
 			q.add(root);
-			Node temp=null;
+			Node temp=null; // here we are using this temp for return also. So declared outside while loop
 			while(!q.isEmpty())
 			{
 				temp=q.remove();
@@ -190,7 +189,7 @@ public class BinaryTree {
 				Node temp=q.remove();
 				if(temp.data==value)
 				{
-					temp.data=deepestNode();//****
+					temp.data=deepestNode();//****deepestNode() return [int type] data so here temp.data
 					deleteDeepestNode();//****
 					return;
 				}
@@ -226,14 +225,14 @@ public class BinaryTree {
 			{
 				prev=temp;//****
 				temp=q.remove();
-				if(temp.left==null)
+				if(temp.left==null)//*
 				{
 					prev.right=null;//*****
 					size--;
 					return;
 					
 				}
-				else if(temp.right==null)
+				else if(temp.right==null)//*
 				{
 					temp.left=null;//*****
 					size--;
