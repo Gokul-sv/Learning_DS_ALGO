@@ -139,25 +139,25 @@ public class BinarySearchTree {
 		}
 		else if(nroot.data==data)
 		{
-			if(nroot.left==null && nroot.right==null)
+			if(nroot.left==null && nroot.right==null)// case:1 [leaf node]
 			{
 				nroot=null;
 				size--;
 			}
-			else if(nroot.left!=null && nroot.right==null)
+			else if(nroot.left!=null && nroot.right==null)// case:2 [has 1 child (only left node)]
 			{
 				nroot=nroot.left;
 				size--;
 			}
-			else if(nroot.right!=null && nroot.left==null)
+			else if(nroot.right!=null && nroot.left==null)// case:2 [has 1 [child (only Right node)]
 			{
 				nroot=nroot.right;
 				size--;
 			}
-			else if(nroot.left!=null && nroot.right!=null)
+			else if(nroot.left!=null && nroot.right!=null)// case:3 [has 2 child]
 			{
 				Node temp=min_of_rit_subTree(nroot.right);//***
-				nroot=delete(nroot,temp.data);//******
+				nroot=delete(nroot,temp.data);//******becz min node([here temp] or successor) will be case:1 or case:2. So we can delete easily   
 				nroot.data=temp.data;//***
 			}
 		}

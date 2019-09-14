@@ -17,7 +17,7 @@ public class BinarySearchTreeMain {
 		bst.insert(47);
 		System.out.println(bst.size);
 		bst.levOrder();
-		bst.delete(45);
+		bst.delete(45);//minidfwaws
 		System.out.println(bst.size);
 		bst.levOrder();
 	}
