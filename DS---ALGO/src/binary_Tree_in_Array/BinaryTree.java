@@ -1,5 +1,16 @@
 package binary_Tree_in_Array;
 
+/*
+insert
+preOrder
+inOrder
+postOrder
+levelOrder
+delete
+deleteBinaryTree
+search
+display
+*/
 public class BinaryTree {
 	int ar[];
 	int lastupdateindex=0;//In Binary tree iterative method we are leaving first (0th) index as empty to help insertion [O(1)]
@@ -24,7 +35,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void preOrder(int index)//rLR
+	void preOrder(int index)//rLR-->  root(print),Left,Right
 	{
 		if(size==0)
 		{
@@ -46,7 +57,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void inOrder(int index)// LrR
+	void inOrder(int index)// LrR-->  Left,root(print),Right
 	{
 		if(size==0)
 		{
@@ -68,7 +79,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void postOrder(int index)// LRr
+	void postOrder(int index)// LRr-->  Left,Right,root(print)
 	{
 		if(size==0)
 		{
@@ -126,7 +137,7 @@ public class BinaryTree {
 					return;
 				}
 			}
-			System.out.println("Sorry data is not found in the tree cant DELETE");
+			System.out.println("Sorry data is not found in the tree, can't DELETE");
 		}
 	}
 	
@@ -158,7 +169,7 @@ public class BinaryTree {
 		}
 	}
 	
-	void display()
+	void display() // same logic as Level order 
 	{
 		if(size==0)
 		{
