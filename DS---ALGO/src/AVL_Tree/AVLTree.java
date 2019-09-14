@@ -3,9 +3,6 @@ package AVL_Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
-
-
 public class AVLTree {
 	Node root;
 	int size;
@@ -42,7 +39,7 @@ public class AVLTree {
 		{
 			curnode.right=insert_avl(curnode.right,data);
 		}
-		int balance=height(curnode.left)-height(curnode.right);
+		int balance=height(curnode.left)-height(curnode.right);// calculating the height
  		if(balance>=2)
 		{
 			if(height(curnode.left.left)>=height(curnode.left.right))
@@ -156,22 +153,22 @@ public class AVLTree {
 		}
 		else if(nroot.data==data)
 		{
-			if(nroot.left==null && nroot.right==null)
+			if(nroot.left==null && nroot.right==null)//case:1
 			{
 				nroot=null;
 				size--;
 			}
-			else if(nroot.left!=null && nroot.right==null)
+			else if(nroot.left!=null && nroot.right==null)//case:2 left
 			{
 				nroot=nroot.left;
 				size--;
 			}
-			else if(nroot.right!=null && nroot.left==null)
+			else if(nroot.right!=null && nroot.left==null)//case:2 Right
 			{
 				nroot=nroot.right;
 				size--;
 			}
-			else if(nroot.left!=null && nroot.right!=null)
+			else if(nroot.left!=null && nroot.right!=null)//case:3
 			{
 				Node temp=min_of_rit_subTree(nroot.right);//***
 				nroot=delete(nroot,temp.data);//******

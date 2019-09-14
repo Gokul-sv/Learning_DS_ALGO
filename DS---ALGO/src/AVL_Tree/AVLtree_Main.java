@@ -9,6 +9,8 @@ public class AVLtree_Main {
 		avl.insert(40);
 		avl.insert(20);
 		avl.levelOrder();
+		avl.insert(15);
+		avl.levelOrder();
 		avl.delete(40);
 		avl.delete(25);
 		avl.levelOrder();
