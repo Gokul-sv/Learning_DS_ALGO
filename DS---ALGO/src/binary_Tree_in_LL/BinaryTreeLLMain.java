@@ -19,8 +19,6 @@ public class BinaryTreeLLMain {
 		bt.levelOrder();
 		System.out.println(bt.size);
 		bt.levelOrder();
-		System.out.println(bt.deepestNode());
-		
+		System.out.println(bt.deepestNode());	
 	}
-
 }
