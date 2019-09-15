@@ -127,7 +127,7 @@ public class DoublyLinkedList {
 	{
 		if(size==0)
 		{
-			System.out.println("Can't set List is empty..");
+			System.out.println("Can't set, List is empty..");
 		}
 		else
 		{
@@ -241,7 +241,7 @@ public class DoublyLinkedList {
 		}
 	}
 	
-	void delete(int index)
+	void delete(int index)//*
 	{
 		if(size==0)
 		{
@@ -268,7 +268,7 @@ public class DoublyLinkedList {
 			Node temp=first;
 			while(true)
 			{
-				if(index == indx+1)
+				if(index == indx+1)//have to stand before the delete node
 				{
 					temp.next.prev=null;
 					temp.next=temp.next.next;
