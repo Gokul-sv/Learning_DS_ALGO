@@ -15,7 +15,7 @@ public class Circular_SinglyLinkedList {
 		{
 			last=n;
 		}
-		last.next=first;
+		last.next=first;//logic
 		size++;
 	}
 	void addFirst(int data)
@@ -38,7 +38,7 @@ public class Circular_SinglyLinkedList {
 		}
 			
 		last=n;
-		last.next=first;
+		last.next=first;//logic
 		size++;
 	}
 	
@@ -113,7 +113,7 @@ public class Circular_SinglyLinkedList {
 		while(true)
 		{
 			System.out.print(temp.data+" ");
-			if(temp==last)
+			if(temp==last)//logic to stop the iteration to reach the last node
 			{
 				System.out.println();
 				return;
@@ -135,7 +135,7 @@ public class Circular_SinglyLinkedList {
 				{
 					return index;
 				}
-				if(temp==last)
+				if(temp==last)// logic
 				{
 					return -1;
 				}
@@ -160,7 +160,7 @@ public class Circular_SinglyLinkedList {
 			{
 				return temp.data;
 			}
-			if(temp==last)
+			if(temp==last)//logic
 			{
 				return-1;
 			}
@@ -204,10 +204,10 @@ public class Circular_SinglyLinkedList {
 		Node temp=first;
 		while(temp!=null)
 		{
-			if(temp.next.next==first)
+			if(temp.next.next==first)//logic
 			{	
-				temp.next=null;
-				last=temp;
+				temp.next=null;//*
+				last=temp;//*
 				last.next=first;
 				size--;
 				return;
@@ -242,7 +242,7 @@ public class Circular_SinglyLinkedList {
 				size--;
 				return;
 			}
-			if(temp==last)
+			if(temp==last)//logic
 			{
 				return;
 			}
@@ -268,7 +268,7 @@ public class Circular_SinglyLinkedList {
 				return;
 			}
 			
-			if(temp==last)
+			if(temp==last)//logic
 			{
 				return;
 			}

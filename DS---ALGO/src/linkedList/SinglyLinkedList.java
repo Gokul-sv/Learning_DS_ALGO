@@ -6,8 +6,9 @@ public class SinglyLinkedList
 {
 	Node first=null;
 	Node last=null;
-	int size=0;
-	//Adding the data to list (adding at the front or head)--------------------
+	int size=0;//***
+	
+	//Adding the data to list (adding at the front[head])----------------------------
 	void add(int data) 
 	{
 		Node n = new Node();
@@ -25,7 +26,7 @@ public class SinglyLinkedList
 	{
 		add(data);
 	}
-	//Adding the data to list at the last or tail)--------------------------------------
+	//Adding the data to list at the last[tail])--------------------------------------
 	void addLast(int data)
 	{
 		Node n = new Node();
@@ -50,7 +51,7 @@ public class SinglyLinkedList
 			System.out.println("Invalid index");
 			return;
 		}		
-		int indx = 0;
+		int indx = 0;// traverse from stating node so initialize with 0
 		Node temp = first;
 		while(temp!=null)
 		{
@@ -79,7 +80,7 @@ public class SinglyLinkedList
 			System.out.println("Invalid index");
 			return;
 		}
-		if(index==0)
+		if(index==0)// if index is first node we can use add method
 		{
 			add(data);
 		}
@@ -87,7 +88,7 @@ public class SinglyLinkedList
 		Node temp = first;
 		while(temp!=null)
 		{
-			if(index == indx+1)
+			if(index == indx+1)//because we can't insert back side one we cross the node so we have to stop before one node (So that we can insert before the given index)
 			{
 				Node n = new Node();
 				n.data=data;
@@ -126,7 +127,7 @@ public class SinglyLinkedList
 	//Get the Index of given data------------------------------------------------------
 	int indexOf(int data)
 	{
-		int index=-1;
+		int index=0;
 		if(first!=null)
 		{
 			Node temp=first;
@@ -138,6 +139,7 @@ public class SinglyLinkedList
 					return index;
 				}
 				temp=temp.next;
+				index++;
 			}
 		}
 		return -1;
@@ -149,16 +151,16 @@ public class SinglyLinkedList
 		{
 			return -1;
 		}
-		int indx=-1;
+		int indx=0;
 		Node temp=first;
 		while(temp!=null)
 		{
-			indx++;
 			if(indx == index)
 			{
 				return temp.data;
 			}
 			temp=temp.next;
+			index++;
 		}
 		return -1;
 	}
@@ -176,7 +178,7 @@ public class SinglyLinkedList
 			size--;
 			return;
 		}
-		first=first.next;
+		first=first.next;// logic
 		size--;
 	}
 	//Delete from last of the List----------------------------------------------------------------
@@ -198,7 +200,7 @@ public class SinglyLinkedList
 		{
 			if(temp.next.next==null)
 			{	
-				temp.next=null;
+				temp.next=null;//logic
 				last=temp;
 				size--;
 				return;
@@ -216,6 +218,7 @@ public class SinglyLinkedList
 		if(index==0)
 		{
 			deleteFront();
+			return;
 		}
 		if(index==size-1)
 		{
@@ -226,9 +229,9 @@ public class SinglyLinkedList
 		Node temp = first;
 		while(temp!=null)
 		{
-			if(index == indx+1)
+			if(index == indx+1)//***
 			{
-				temp.next=temp.next.next;
+				temp.next=temp.next.next;//logic
 				size--;
 				return;
 			}
