@@ -1,5 +1,12 @@
 package linear_Queue_in_Array;
-
+/*FIFO- First in First Out
+1.enQueue
+2.deQueue
+3.peekInQueue
+4.display
+5.isEmpty
+6.isFull
+7.deleteQueue*/
 public class Queue {
 	int ar[];
 	int first=0;
@@ -32,7 +39,7 @@ public class Queue {
 		else
 		{
 			System.out.println(ar[first]+" is deleted from the Queue");
-			first++;
+			first++;//*
 			if(first>last)
 			{
 				last=-1;
