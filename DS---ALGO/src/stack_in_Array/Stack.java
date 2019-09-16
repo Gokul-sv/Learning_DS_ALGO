@@ -1,5 +1,13 @@
 package stack_in_Array;
-
+/*LIFO-Last in First Out
+1.push
+2.pop
+3.peek
+4.isEmpty
+5.isFull
+6.deleteStack
+7.display
+*/
 public class Stack {
 	int ar[];
 	int topOfstack=-1; //*
@@ -55,13 +63,12 @@ public class Stack {
 		return (topOfstack+1==ar.length);
 	}
 	
-	void DeleteStack()
+	void deleteStack()
 	{
 		topOfstack=-1; //*
 		ar=null;
 	}
-	
-	
+		
 	void display()
 	{
 		if(topOfstack==-1)
@@ -77,7 +84,4 @@ public class Stack {
 			System.out.println();
 		}
 	}
-	
-	
-
 }
