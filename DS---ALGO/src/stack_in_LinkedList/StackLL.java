@@ -1,4 +1,13 @@
 package stack_in_LinkedList;
+/*LIFO
+1.push
+2.pop
+3.peek
+4.isEmpty
+5.deleteStack
+6.display
+7.size
+*/
 
 public class StackLL {
 	Node first;
@@ -15,7 +24,7 @@ public class StackLL {
 	
 	void pop()
 	{
-		if(size==0)
+		if(first==null)
 		{
 			System.out.println("Stack is empty Nothing to pop");
 		}
@@ -29,7 +38,7 @@ public class StackLL {
 	
 	void peek()
 	{
-		if(size==0)
+		if(first==null)
 		{
 			System.out.println("Stack is empty");
 		}
@@ -41,7 +50,7 @@ public class StackLL {
 	
 	boolean isEmpty()
 	{
-		return (first==null);
+		return (first==null);//*
 	}
 	
 	void deleteStack()
