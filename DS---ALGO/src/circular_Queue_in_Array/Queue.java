@@ -2,7 +2,7 @@ package circular_Queue_in_Array;
 
 public class Queue {
 	int ar[];
-	int size=0;
+	int size=0;//*
 	int first=0;
 	int last=-1;
 	
@@ -39,34 +39,21 @@ public class Queue {
 			System.out.println("Queue is Empty Can't dequeue");
 		}
 		else
-		{
-			if(first==ar.length-1)
+		{			
+			System.out.println(ar[first]+" is deleted from the Queue");
+			size--;//*
+			if(first==last)//both are in same index means queue is empty so we make it as initial state
 			{
-				System.out.println(ar[first]+" is deleted from the Queue");
-				size--;
-				if(first==last)
-				{
-					last=-1;
-					first=0;
-				}
-				else
-				{
-					first=0;
-				}
+				last=-1;
+				first=0;
 			}
-			else
+			else if(first==ar.length-1)//if first end of array and not equal to last   (So it mean circular)
 			{
-				System.out.println(ar[first]+" is deleted from the Queue");
-				size--;
-				if(first==last)
-				{
-					last=-1;
-					first=0;
-				}
-				else
-				{
-					first++;					
-				}
+				first=0;
+			}
+			else//normal
+			{
+				first++;					
 			}
 		}
 	}
@@ -79,14 +66,14 @@ public class Queue {
 		}
 		else
 		{
-			if(first<=last)
+			if(first<=last)// normal display logic
 			{
 				for(int i=first;i<=last;i++)
 				{
 					System.out.print(ar[i]+" ");
 				}
 			}
-			if(first > last)
+			else if(first > last)// for circular queue display logic
 			{
 				for(int i=first;i<=ar.length-1;i++)
 				{
@@ -125,7 +112,7 @@ public class Queue {
 	
 	boolean isFull()
 	{
-		return (size ==ar.length );
+		return (size ==ar.length );//*
 	}
 	
 	void deleteQueue()
