@@ -12,7 +12,6 @@ public class QueueMain {
 		q.enQueue(30);
 		q.deQueue();
 		q.enQueue(40);
-
 		q.deQueue();
 		q.display();
 		q.enQueue(70);

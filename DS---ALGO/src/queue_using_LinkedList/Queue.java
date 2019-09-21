@@ -9,14 +9,14 @@ public class Queue {
 	{
 		Node n =new Node();
 		n.data=data;
-		if(size==0 && first==null)
+		if(first==null)
 		{
 			first=last=n;
 		}
 		else
 		{
-			n.next=last.next;
-			last.next=n;
+			n.next=last.next;//*
+			last.next=n;//*
 			last=n;
 		}
 		size++;
@@ -36,7 +36,7 @@ public class Queue {
 				size--;
 				return;
 			}
-			first=first.next;
+			first=first.next;//logic
 			size--; 
 		}
 	}
@@ -49,14 +49,12 @@ public class Queue {
 			return;
 		}
 		Node temp = first;
-		{
 			while(temp!=null)
 			{
 				System.out.print(temp.data+" ");
 				temp=temp.next;
 			}
 			System.out.println();
-		}
 	}
 	
 	void peek()
