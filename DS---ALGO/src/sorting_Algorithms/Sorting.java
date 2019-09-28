@@ -20,6 +20,30 @@ public class Sorting {
 		return ar;
 	}
 	
+	int[] selectionSort(int ar[])
+	{
+		int n = ar.length;
+		for(int i=0;i<n-1;i++)
+		{
+			int min=i;
+			int j;
+			for(j=i;j<n;j++)
+			{
+				if(ar[j]<ar[min])
+				{
+					min=j;
+				}
+			}
+			if(min!=j)
+			{
+				int temp=ar[i];
+				ar[i]=ar[min];
+				ar[min]=temp;
+			}
+		}
+		return ar;
+	}
+	
 	void display(int ar[])
 	{
 		for(int i=0;i<ar.length;i++)
