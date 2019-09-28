@@ -44,6 +44,21 @@ public class Sorting {
 		return ar;
 	}
 	
+	int[] insertionSort(int ar[])
+	{
+		for(int i=1;i<ar.length;i++)
+		{
+			int curelmt=ar[i];
+			int j=i;
+			while(j>0 && ar[j-1]>curelmt)//**here we are checking new element(curelmt) with last element of the sorted part (if it fails then new element is greater than the sorted part it will add followed by the sorted array)
+			{
+				ar[j]=ar[j-1];// shifting element to right side. 
+				j--;
+			}
+			ar[j]=curelmt;// inserting new element in the correct position.
+		}
+		return ar;
+	}
 	void display(int ar[])
 	{
 		for(int i=0;i<ar.length;i++)
