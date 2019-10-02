@@ -59,6 +59,95 @@ public class Sorting {
 		}
 		return ar;
 	}
+	
+	void mergeSort(int ar[],int l,int r)
+	{
+		if(l<r)
+		{
+			int m=(l+r)/2;
+			mergeSort(ar,l,m);
+			mergeSort(ar,m+1,r);
+			merge(ar,l,m,r);
+		}
+	}
+	void merge(int ar[],int l,int m,int r)
+	{
+		int Ll=m-l+1;
+		int Rl=r-m;
+		int L[]=new int[Ll];
+		int R[]=new int[Rl];		
+		
+		for(int i=0;i<Ll;i++)
+		{
+			L[i]=ar[l+i];
+		}
+		for(int j=0;j<Rl;j++)
+		{
+			R[j]=ar[m+j+1];
+		}
+		
+		int i=0,j=0;
+		int k=l;
+		
+		while(i<Ll && j<Rl )
+		{
+			if(L[i]<=R[j])
+			{
+				ar[k]=L[i];
+				i++;
+			}
+			else
+			{
+				ar[k]=R[j];
+				j++;
+			}
+			k++;
+		}
+		while(i<Ll)
+		{
+			ar[k]=L[i];
+			i++;
+			k++;
+		}
+		while(j<Rl)
+		{
+			ar[k]=R[j];
+			j++;
+			k++;
+		}
+		
+	}
+	
+	void quickSort(int ar[],int low,int high)
+	{
+		if(low<high)
+		{
+			int pivot=partition(ar,low,high);
+			quickSort(ar,low,pivot-1);
+			quickSort(ar,pivot+1,high);
+		}
+	}
+	//this method do the operation[i and j](make sure left side of the pivot should be lesser than pivot and right side should be higher than that ) and return the pivot
+	int partition(int ar[],int low,int high)
+	{
+		int pivot=ar[high];
+		int i=low-1;
+		for(int j=low;j<high;j++)
+		{
+			if(ar[j]<pivot)
+			{
+				i++;
+				int temp = ar[i];
+				ar[i]= ar[j];
+				ar[j]=temp;
+			}
+		}
+		int temp=ar[i+1];
+		ar[i+1]=ar[high];//high or pivot
+		ar[high]=temp;
+		
+		return i+1;// i+1 is nothing but pivot
+	}
 	void display(int ar[])
 	{
 		for(int i=0;i<ar.length;i++)
