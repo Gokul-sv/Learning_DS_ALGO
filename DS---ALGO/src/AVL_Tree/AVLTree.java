@@ -54,7 +54,7 @@ public class AVLTree {
 		}
 		else if(balance<=-2)
 		{
-			if(height(curnode.left.left)>=height(curnode.left.right))
+			if(height(curnode.right.right)>=height(curnode.right.left))
 			{
 				curnode=leftRotation(curnode);//RR
 			}
